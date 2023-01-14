@@ -1,0 +1,16 @@
+.navbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-left-icon-group {
+    display: flex;
+}
+
+.navbar-left-icon-group ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar-left-icon-group li{
+}
