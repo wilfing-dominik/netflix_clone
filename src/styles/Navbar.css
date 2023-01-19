@@ -26,6 +26,7 @@
     .navbar-left-icon-group ul {
         display: flex;
         list-style-type: none;
+        padding: 0;
     }
 
     .navbar-left-icon-group li{
