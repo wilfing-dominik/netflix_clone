@@ -82,10 +82,13 @@
         padding-top: .7em;
         padding-bottom: .7em;
         box-sizing: border-box;
-        width: 100%;
         outline:none;
-        min-width: 280px;
-        max-width: 350px;
+        opacity: 0%;
+        width: 280px;
+        transition: opacity .3s ease-in-out;
     }
+
+    .search-input:focus {
+        opacity: 100%;
     }
 /* END RIGHT GROUP */
