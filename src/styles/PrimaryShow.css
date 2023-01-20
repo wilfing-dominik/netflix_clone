@@ -22,7 +22,11 @@ button {
   padding-bottom: 0.6em;
 }
 
-button:hover {
+.more-info:hover {
+  background: rgba(109, 109, 110, 0.3);
+}
+
+.play:hover {
   opacity: 75%;
 }
 
