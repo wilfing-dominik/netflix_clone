@@ -1,15 +1,17 @@
-import React from 'react'
+import React from "react";
+import axios from "../src/utils/requests";
+import "./styles/Global.css";
 
-// STYLE
-import './styles/Global.css'
-
-// COMPONENTS
-import Navbar from './components/Navbar'
+import Row from "./components/Row";
+import Navbar from "./components/Navbar";
+import PrimaryShow from "./components/PrimaryShow";
 
 function App() {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
+      <PrimaryShow />
+      {/* <Row title={"Action & Adventure"} url={axios.actionAdventure} /> */}
     </div>
   );
 }

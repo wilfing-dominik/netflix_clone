@@ -1,0 +1,37 @@
+.primary-show {
+  padding-top: 15%;
+  padding-left: 3%;
+}
+
+h1 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.6vw;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.4vw;
+  font-weight: 700;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+}
+
+button:hover {
+  opacity: 75%;
+}
+
+.play {
+  color: black;
+  background-color: white;
+}
+
+.more-info {
+  background-color: rgba(109, 109, 110, 0.7);
+  margin-left: 0.8em;
+}
