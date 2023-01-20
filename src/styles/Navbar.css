@@ -1,13 +1,14 @@
 /* MAIN */
 .navbar-wrapper {
+  align-self: center;
   position: sticky;
   top: 0;
   display: flex;
   justify-content: space-between;
   padding-top: 1em;
   padding-bottom: 1em;
-  padding-left: 2.75em;
-  padding-right: 3.6em;
+  padding-left: 2.55em;
+  padding-right: 3.4em;
   background-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 0),
