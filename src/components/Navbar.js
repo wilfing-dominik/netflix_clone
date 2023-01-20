@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Navbar.css";
+import getWindowDimensions from "../utils/resizeHook";
 
 function Navbar() {
   const [isNavbarActive, setIsNavbarActive] = useState(false);
   const [isMouseOnProfileIcon, setIsMouseOnProfileIcon] = useState(false);
   const [isSearchbarFocused, setIsSearchbarFocused] = useState(false);
+  const [minimizeNavbar, setIsWindowTooSmall] = useState(false);
+  const { height, width } = getWindowDimensions();
 
   const handleNavbarActive = () => {
     if (window.scrollY >= 1) {
@@ -38,6 +41,14 @@ function Navbar() {
     };
   }, []);
 
+  useEffect(() => {
+    if (width <= 930) {
+      setIsWindowTooSmall(true);
+    } else {
+      setIsWindowTooSmall(false);
+    }
+  }, [width]);
+
   return (
     <nav
       className={isNavbarActive ? "navbar-wrapper active" : "navbar-wrapper"}
@@ -57,26 +68,29 @@ function Navbar() {
             </svg>
           </a>
         </label>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/">TV Shows</a>
-          </li>
-          <li>
-            <a href="/">Movies</a>
-          </li>
-          <li>
-            <a href="/">New & Popular</a>
-          </li>
-          <li>
-            <a href="/">My List</a>
-          </li>
-          <li>
-            <a href="/">Browse by languages</a>
-          </li>
-        </ul>
+        {!minimizeNavbar && (
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/">TV Shows</a>
+            </li>
+            <li>
+              <a href="/">Movies</a>
+            </li>
+            <li>
+              <a href="/">New & Popular</a>
+            </li>
+            <li>
+              <a href="/">My List</a>
+            </li>
+            <li>
+              <a href="/">Browse by languages</a>
+            </li>
+          </ul>
+        )}
+        {minimizeNavbar && <a className="browse-link">Browse</a>}
       </div>
 
       <div className="navbar-right-icon-group">
