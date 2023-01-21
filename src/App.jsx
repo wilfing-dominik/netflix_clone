@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "./utils/requests";
+import axios from "../src/utils/requests";
 import "./styles/Global.css";
 
 import Row from "./components/Row";
