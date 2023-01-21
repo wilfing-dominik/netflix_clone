@@ -1,0 +1,12 @@
+.row-posters {
+  display: flex;
+  margin-top: 7%;
+}
+
+.row-poster {
+  object-fit: contain;
+  width: 100%;
+  max-height: 170px;
+  margin-left: 1.5rem;
+  border-radius: 5px;
+}
