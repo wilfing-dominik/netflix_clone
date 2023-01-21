@@ -8,11 +8,11 @@ import PrimaryShow from "./components/PrimaryShow";
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <PrimaryShow />
       {/* <Row title={"Action & Adventure"} url={axios.actionAdventure} /> */}
-    </div>
+    </>
   );
 }
 
