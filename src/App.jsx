@@ -11,7 +11,12 @@ function App() {
     <>
       <Navbar />
       <PrimaryShow />
-      {/* <Row title={"Action & Adventure"} url={axios.actionAdventure} /> */}
+      {/* <Row title={"Action & Adventure"} url={axios.nowTrending} />
+      <Row title={"Action & Adventure"} url={axios.actionAdventure} />
+      <Row title={"Action & Adventure"} url={axios.comedy} />
+      <Row title={"Action & Adventure"} url={axios.mistery} />
+      <Row title={"Action & Adventure"} url={axios.nowTrending} />
+      <Row title={"Action & Adventure"} url={axios.scifyFantasy} /> */}
     </>
   );
 }
