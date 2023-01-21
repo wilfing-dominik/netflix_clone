@@ -8,7 +8,7 @@ function Navbar() {
   const [isSearchbarFocused, setIsSearchbarFocused] = useState(false);
   const [minimizeNavbar, setIsWindowTooSmall] = useState(false);
   const [navIconsDisappear, setSearchDisappear] = useState(false);
-  const { height, width } = getWindowDimensions();
+  const { width } = getWindowDimensions();
 
   const handleNavbarActive = () => {
     if (window.scrollY >= 1) {
@@ -65,8 +65,8 @@ function Navbar() {
           <a href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="11vw"
-              height="2.5vw"
+              width="11.5vw"
+              height="2.7vw"
               viewBox="-153.6 -90.8 1331.2 415.113"
             >
               <path
