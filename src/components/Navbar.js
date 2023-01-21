@@ -65,7 +65,8 @@ function Navbar() {
           <a href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="120"
+              width="11vw"
+              height="2.5vw"
               viewBox="-153.6 -90.8 1331.2 415.113"
             >
               <path
