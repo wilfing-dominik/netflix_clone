@@ -1,5 +1,7 @@
 .primary-show {
-  padding-top: 12%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 18%;
   padding-left: 3%;
 }
 
@@ -10,16 +12,17 @@ h1 {
 }
 
 button {
+  width: 10%;
   cursor: pointer;
   outline: none;
   border: none;
   border-radius: 4px;
   font-size: 1.4vw;
   font-weight: 700;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  padding-top: 0.6em;
-  padding-bottom: 0.6em;
+  padding-left: 0.9em;
+  padding-right: 0.9em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .more-info:hover {
@@ -37,5 +40,9 @@ button {
 
 .more-info {
   background-color: rgba(109, 109, 110, 0.7);
-  margin-left: 0.8em;
+  margin-left: 1em;
+}
+
+.button-wrapper {
+  display: flex;
 }
