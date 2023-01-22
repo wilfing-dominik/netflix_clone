@@ -81,8 +81,8 @@ function Navbar() {
           <a href="/" className="logo-link">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="12vw"
-              height="3vw"
+              width="100%"
+              height="100%"
               viewBox="-153.6 -90.8 1331.2 415.113"
             >
               <path

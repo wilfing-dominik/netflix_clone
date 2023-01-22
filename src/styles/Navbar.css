@@ -26,6 +26,14 @@
 /* END MAIN */
 
 /* LEFT GROUP */
+.navbar-left-icon-group {
+  position: fixed;
+  left: 15px;
+}
+
+.logo {
+  width: 15%;
+}
 
 .logo-link {
   display: flex;
@@ -81,7 +89,7 @@
 /* RIGHT GROUP */
 .navbar-right-icon-group {
   position: fixed;
-  right: 25px;
+  right: 30px;
 }
 
 .navbar-right-icon-group span {
