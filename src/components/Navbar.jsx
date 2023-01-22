@@ -53,7 +53,7 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (width <= 850) {
+    if (width <= 885) {
       setIsWindowTooSmall(true);
     } else {
       setIsWindowTooSmall(false);
