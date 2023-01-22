@@ -1,0 +1,17 @@
+.browse-menu {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 1.3rem;
+  border-top: 1px solid white;
+  background-color: rgb(0, 0, 0, 0.8);
+}
+
+.browse-menu li:not(:last-child) {
+  padding-bottom: 1.5rem;
+  margin-left: 0;
+}
+
+.browse-menu a:hover {
+  background-color: rgba(98, 95, 95, 0.8);
+}

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Navbar.css";
 import getWindowDimensions from "../utils/resizeHook";
+import BrowseMenu from "./BrowseMenu";
 
 function Navbar() {
   const [isNavbarActive, setIsNavbarActive] = useState(false);
   const [isMouseOnProfileIcon, setIsMouseOnProfileIcon] = useState(false);
   const [isSearchbarFocused, setIsSearchbarFocused] = useState(false);
   const [minimizeNavbar, setIsWindowTooSmall] = useState(false);
-  const [navIconsDisappear, setSearchDisappear] = useState(false);
+  const [navIconsDisappear, setNavIconsDisappear] = useState(false);
+  const [isBrowseHovered, setIsBrowseHovered] = useState(false);
   const { width } = getWindowDimensions();
 
   const handleNavbarActive = () => {
@@ -34,6 +36,14 @@ function Navbar() {
     setIsSearchbarFocused(false);
   };
 
+  const handleBrowseHovered = () => {
+    setIsBrowseHovered(true);
+  };
+
+  const handleBrowseHoverLeft = () => {
+    setIsBrowseHovered(false);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleNavbarActive);
 
@@ -43,17 +53,23 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (width <= 930) {
+    if (width <= 850) {
       setIsWindowTooSmall(true);
     } else {
       setIsWindowTooSmall(false);
     }
 
-    if (width <= 438) {
-      setSearchDisappear(true);
+    if (width <= 493) {
+      setNavIconsDisappear(true);
     } else {
-      setSearchDisappear(false);
+      setNavIconsDisappear(false);
     }
+
+    // if (width <= 280) {
+    //   setNavIconsDisappear(true);
+    // } else {
+    //   setNavIconsDisappear(false);
+    // }
   }, [width]);
 
   return (
@@ -62,11 +78,11 @@ function Navbar() {
     >
       <div className="navbar-left-icon-group">
         <label className="logo">
-          <a href="/">
+          <a href="/" className="logo-link">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="11.5vw"
-              height="2.7vw"
+              width="12vw"
+              height="3vw"
               viewBox="-153.6 -90.8 1331.2 415.113"
             >
               <path
@@ -77,7 +93,7 @@ function Navbar() {
           </a>
         </label>
         {!minimizeNavbar && (
-          <ul>
+          <ul className="main-menu">
             <li>
               <a href="/">Home</a>
             </li>
@@ -98,7 +114,18 @@ function Navbar() {
             </li>
           </ul>
         )}
-        {minimizeNavbar && <a className="browse-link">Browse</a>}
+        {minimizeNavbar && (
+          <>
+            <a
+              onMouseEnter={handleBrowseHovered}
+              onMouseLeave={handleBrowseHoverLeft}
+              className="browse-link"
+            >
+              Browse
+              {isBrowseHovered && <BrowseMenu />}
+            </a>
+          </>
+        )}
       </div>
 
       <div className="navbar-right-icon-group">
