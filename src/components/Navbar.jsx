@@ -117,6 +117,7 @@ function Navbar() {
         {minimizeNavbar && (
           <>
             <a
+              href="/"
               onMouseEnter={handleBrowseHovered}
               onMouseLeave={handleBrowseHoverLeft}
               className="browse-link"
