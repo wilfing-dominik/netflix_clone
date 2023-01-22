@@ -41,6 +41,7 @@
 
 .browse-link {
   margin-left: 1.1em;
+  cursor: pointer;
 }
 
 .browse-link * {

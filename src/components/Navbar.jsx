@@ -36,14 +36,6 @@ function Navbar() {
     setIsSearchbarFocused(false);
   };
 
-  const handleBrowseHovered = () => {
-    setIsBrowseHovered(true);
-  };
-
-  const handleBrowseHoverLeft = () => {
-    setIsBrowseHovered(false);
-  };
-
   useEffect(() => {
     window.addEventListener("scroll", handleNavbarActive);
 
@@ -64,12 +56,6 @@ function Navbar() {
     } else {
       setNavIconsDisappear(false);
     }
-
-    // if (width <= 280) {
-    //   setNavIconsDisappear(true);
-    // } else {
-    //   setNavIconsDisappear(false);
-    // }
   }, [width]);
 
   return (
@@ -117,14 +103,14 @@ function Navbar() {
         {minimizeNavbar && (
           <>
             <a
-              href="/"
-              onMouseEnter={handleBrowseHovered}
-              onMouseLeave={handleBrowseHoverLeft}
+              onClick={() => {
+                setIsBrowseHovered(!isBrowseHovered);
+              }}
               className="browse-link"
             >
               Browse
-              {isBrowseHovered && <BrowseMenu />}
             </a>
+            {isBrowseHovered && <BrowseMenu />}
           </>
         )}
       </div>
