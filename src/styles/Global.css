@@ -9,6 +9,10 @@ body {
   background-size: 100vw;
 }
 
+ul {
+  list-style-type: none;
+}
+
 * {
   user-select: none;
   margin: 0;
