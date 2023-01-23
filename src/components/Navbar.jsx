@@ -10,6 +10,7 @@ import BrowseMenu from "./BrowseMenu";
 import ProfileMenu from "./ProfileMenu";
 import NotificationMenu from "./NotificationMenu";
 import MainMenu from "./MainMenu";
+import SearchBar from "./SearchBar";
 
 function Navbar() {
   const [isScreenScrolled, setIsScreenScrolled] = useState(false);
@@ -95,18 +96,10 @@ function Navbar() {
 
       <div className="navbar-right-icon-group">
         {isSearchbarFocused && (
-          <span>
-            <input
-              autoFocus
-              onBlur={() => {
-                handleSearchFocus(false);
-              }}
-              className="search-input"
-              type="text"
-              name="search"
-              placeholder="Titles, people, genres"
-            />
-          </span>
+          <SearchBar
+            placeHolder="Titles, people, genres"
+            handleSearchFocus={handleSearchFocus}
+          />
         )}
 
         {!isSearchbarFocused && !isCollapseRightIcons && (
