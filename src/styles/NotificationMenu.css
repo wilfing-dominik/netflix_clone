@@ -1,4 +1,4 @@
-.profile-menu {
+.notification-menu {
   transition: opacity 1s ease-in-out;
   display: flex;
   flex-direction: column;
@@ -6,24 +6,33 @@
   justify-content: center;
   position: absolute;
   background-color: transparent;
-  right: 0px;
+  right: 50px;
   top: 25px;
   padding-top: 3rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.profile-menu li:first-of-type {
+.notification-menu li:first-of-type {
   border-top: 1px solid white;
 }
 
-.profile-menu li {
+.notification-menu li {
   text-align: center;
-  padding: 1em;
-  min-width: 200px;
+  padding: 1.5em 1.5em 1.5em 0.5em;
   background-color: rgba(0, 0, 0, 0.89);
 }
 
-.profile-menu li:hover {
+.notification-menu li:hover {
   background-color: rgba(56, 55, 55, 0.89);
+}
+
+.notification-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-menu img {
+  margin-right: 1em;
 }
