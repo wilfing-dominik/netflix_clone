@@ -73,6 +73,10 @@
 /* END LEFT GROUP */
 
 /* RIGHT GROUP */
+.notification-wrapper {
+  padding-top: 8em;
+}
+
 .navbar-right-icon-group {
   position: fixed;
   right: 30px;

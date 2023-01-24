@@ -128,10 +128,10 @@ function Navbar() {
         {!isCollapseRightIcons && (
           <span
             className="notification"
-            onMouseOver={() => {
+            onMouseEnter={() => {
               handleHoverNotification(true);
             }}
-            onMouseOut={() => {
+            onMouseLeave={() => {
               handleHoverNotification(false);
             }}
           >
@@ -150,7 +150,9 @@ function Navbar() {
                 fill="currentColor"
               ></path>
             </svg>
-            {isNotificationHovered && <NotificationMenu />}
+            <div className="notification-wrapper">
+              {isNotificationHovered && <NotificationMenu />}
+            </div>
           </span>
         )}
 
