@@ -169,12 +169,12 @@ function Navbar() {
             src="http://occ-0-6201-1490.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdYJV5wt63AcxNaDoqDXUhqZb55oN5Dxt1m-Zdn_z5rn_hIq9m8dA8JB2xdcPmrY3yXnlVWYKPXnOrbv2QN4aEVU28dESJg.png?r=1d4"
             alt=""
           ></img>
-          {isMouseOnProfileIcon && <ProfileMenu />}
           <span
             className={
               isMouseOnProfileIcon ? "caret isProfileIconActive" : "caret"
             }
           ></span>
+          {isMouseOnProfileIcon && <ProfileMenu />}
         </span>
       </div>
     </nav>
