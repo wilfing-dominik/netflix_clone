@@ -74,7 +74,7 @@ function Navbar() {
 
   return (
     <nav
-      className={isScreenScrolled ? "navbar-wrapper active" : "navbar-wrapper"}
+      className={isScreenScrolled ? "navbar-wrapper hovered" : "navbar-wrapper"}
     >
       <div className="navbar-left-icon-group">
         <NavLogo />

@@ -14,7 +14,7 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.navbar-wrapper.active {
+.navbar-wrapper.hovered {
   background-color: #141414;
 }
 
@@ -44,10 +44,6 @@
   cursor: pointer;
 }
 
-.browse-link * {
-  pointer-events: none;
-}
-
 .browse-link::after {
   border-color: #fff transparent transparent;
   border-style: solid;
@@ -60,30 +56,18 @@
   padding-bottom: 2px;
 }
 
-.navbar-left-icon-group ul {
-  list-style-type: none;
-}
-
 .navbar-left-icon-group .main-menu {
   display: flex;
-  padding: 0;
 }
 
-.navbar-left-icon-group li {
+.main-menu li {
   margin-left: 1.4em;
-}
-
-.navbar-wrapper a {
-  text-decoration: none;
 }
 
 .navbar-wrapper a:hover {
   color: #bbbbbb;
   transition: color 0.4s;
   transition-duration: 0.4s;
-  transition-timing-function: ease;
-  transition-delay: 0s;
-  transition-property: color;
 }
 /* END LEFT GROUP */
 
