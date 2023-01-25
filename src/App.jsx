@@ -1,6 +1,6 @@
 import React from "react";
-// import axios from "../src/utils/requests";
-// import Row from "./components/Row";
+import axios from "../src/utils/requests";
+import Row from "./components/Row";
 import Navbar from "./components/Navbar";
 import PrimaryShow from "./components/PrimaryShow";
 
@@ -9,12 +9,13 @@ function App() {
     <>
       <Navbar />
       <PrimaryShow />
-      {/* <Row title={"Action & Adventure"} url={axios.nowTrending} />
-      <Row title={"Action & Adventure"} url={axios.actionAdventure} />
-      <Row title={"Action & Adventure"} url={axios.comedy} />
-      <Row title={"Action & Adventure"} url={axios.mistery} />
-      <Row title={"Action & Adventure"} url={axios.nowTrending} />
-      <Row title={"Action & Adventure"} url={axios.scifyFantasy} /> */}
+      <div className="rows">
+        <Row title={"Now Trending"} url={axios.nowTrending} />
+        <Row title={"Action & Adventure"} url={axios.actionAdventure} />
+        <Row title={"Comedy"} url={axios.comedy} />
+        <Row title={"Mistery"} url={axios.mistery} />
+        <Row title={"Scify& Fantasy"} url={axios.scifyFantasy} />
+      </div>
     </>
   );
 }

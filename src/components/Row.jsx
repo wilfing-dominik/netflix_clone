@@ -18,14 +18,18 @@ function Row({ title, url }) {
   console.log(shows);
 
   return (
-    <div className="row-posters">
-      {shows.map((show) => (
-        <img
-          className="row-poster"
-          src={imageBaseUrl + show.backdrop_path}
-          alt={show.name}
-        ></img>
-      ))}
+    <div className="row">
+      <h1 className="title">{title}</h1>
+      <div className="row-posters">
+        {shows.map((show) => (
+          <img
+            key={show.id}
+            className="row-poster"
+            src={imageBaseUrl + show.backdrop_path}
+            alt={show.name}
+          ></img>
+        ))}
+      </div>
     </div>
   );
 }

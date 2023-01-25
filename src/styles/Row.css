@@ -1,13 +1,37 @@
+.row {
+  margin-top: 3em;
+  margin-left: 3.5em;
+}
+
 .row-posters {
   display: flex;
-  flex-direction: column;
-  margin-top: 7%;
+  flex-direction: row;
+  gap: 1.5em;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.row-posters::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.row-posters {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .row-poster {
   object-fit: contain;
-  width: 100%;
-  max-height: 170px;
-  margin-left: 1.5rem;
+  min-height: 4em;
+  height: 12em;
   border-radius: 5px;
+  transition: all 0.5s ease;
+}
+
+.row-poster:hover {
+  transform: scale(1.1);
 }
