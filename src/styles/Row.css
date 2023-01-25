@@ -1,5 +1,5 @@
 .row {
-  margin-top: 3em;
+  margin-top: 4em;
   margin-left: 3.5em;
 }
 
@@ -9,8 +9,8 @@
   gap: 1.5em;
   overflow-y: hidden;
   overflow-x: scroll;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
