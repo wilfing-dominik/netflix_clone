@@ -20,7 +20,7 @@ import SearchBar from "./SearchBar";
 function Navbar() {
   const [isScreenScrolled, setIsScreenScrolled] = useState(false);
   const [isProfileIconHovered, setIsProfileIconHovered] = useState(false);
-  const [isSearchbarFocused, setIsSearchbarFocused] = useState(false);
+  const [isSearchBarFocused, setIsSearchBarFocused] = useState(false);
   const [isCollapseMainMenu, setIsCollapseMainMenu] = useState(false);
   const [isCollapseRightIcons, setIsCollapseRightIcons] = useState(false);
   const [isBrowseMenuClicked, setIsBrowseMenuClicked] = useState(false);
@@ -64,19 +64,21 @@ function Navbar() {
       </div>
 
       <div className="navbar-right-icon-group">
-        {isSearchbarFocused && (
+        {isSearchBarFocused && (
           <SearchBar
             placeHolder="Titles, people, genres"
-            handleSearchFocus={handleOnEvent(false, setIsSearchbarFocused)}
+            setIsSearchBarFocused={() => {
+              setIsSearchBarFocused(!isSearchBarFocused);
+            }}
           />
         )}
 
-        {!isSearchbarFocused && !isCollapseRightIcons && (
+        {!isSearchBarFocused && !isCollapseRightIcons && (
           <span>
             <svg
               className="search-icon"
               onClick={() => {
-                handleOnEvent(true, setIsSearchbarFocused);
+                handleOnEvent(true, setIsSearchBarFocused);
               }}
               width="24"
               height="24"
