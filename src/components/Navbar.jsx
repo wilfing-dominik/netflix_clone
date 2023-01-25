@@ -4,8 +4,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/Navbar.css";
 
 //CUSTOM HOOKS
-import { useScreenWidth } from "./customHooks";
-import getWindowDimensions from "../utils/windowDimensions";
+import { useScreenWidth, useWindowDimensions, useScroll } from "./customHooks";
 
 // COMPONENTS
 import NavLogo from "./NavLogo";
@@ -23,7 +22,7 @@ function Navbar() {
   const [isCollapseRightIcons, setIsCollapseRightIcons] = useState(false);
   const [isBrowseMenuPressed, setIsBrowseMenuPressed] = useState(false);
   const [isNotificationHovered, setIsNotificationHovered] = useState(false);
-  const { width } = getWindowDimensions();
+  const { width } = useWindowDimensions();
 
   const handleOnEvent = (event, handler) => {
     if (event) {
@@ -35,16 +34,7 @@ function Navbar() {
 
   useScreenWidth(885, setIsCollapseMainMenu, width);
   useScreenWidth(360, setIsCollapseRightIcons, width);
-  useEffect(() => {
-    const handleIsYScreenScrolled = () => {
-      if (window.scrollY >= 1) {
-        setIsScreenScrolled(true);
-      } else {
-        setIsScreenScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleIsYScreenScrolled);
-  });
+  useScroll(1, setIsScreenScrolled);
 
   return (
     <nav
