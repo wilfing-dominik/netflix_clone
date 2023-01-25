@@ -12,6 +12,9 @@ import NotificationMenu from "./NotificationMenu";
 import MainMenu from "./MainMenu";
 import SearchBar from "./SearchBar";
 
+//CUSTOM HOOKS
+import { useScreenWidth } from "./customHooks";
+
 function Navbar() {
   const [isScreenScrolled, setIsScreenScrolled] = useState(false);
   const [isMouseOnProfileIcon, setIsMouseOnProfileIcon] = useState(false);
@@ -22,55 +25,26 @@ function Navbar() {
   const [isNotificationHovered, setIsNotificationHovered] = useState(false);
   const { width } = getWindowDimensions();
 
-  const handleIsYScreenScrolled = () => {
-    if (window.scrollY >= 1) {
-      setIsScreenScrolled(true);
-    } else {
-      setIsScreenScrolled(false);
-    }
-  };
-
-  const handleMouseHoverProfileIcon = (isHovered) => {
-    if (isHovered) {
-      setIsMouseOnProfileIcon(true);
+  const handleOnEvent = (event, handler) => {
+    if (event) {
+      handler(true);
       return;
     }
-    setIsMouseOnProfileIcon(false);
+    handler(false);
   };
 
-  const handleSearchFocus = (isFocused) => {
-    if (isFocused) {
-      setIsSearchbarFocused(true);
-      return;
-    }
-    setIsSearchbarFocused(false);
-  };
-
-  const handleHoverNotification = (isHovered) => {
-    if (isHovered) {
-      setIsNotificationHovered(true);
-      return;
-    }
-    setIsNotificationHovered(false);
-  };
-
+  useScreenWidth(885, setIsCollapseMainMenu, width);
+  useScreenWidth(360, setIsCollapseRightIcons, width);
   useEffect(() => {
+    const handleIsYScreenScrolled = () => {
+      if (window.scrollY >= 1) {
+        setIsScreenScrolled(true);
+      } else {
+        setIsScreenScrolled(false);
+      }
+    };
     window.addEventListener("scroll", handleIsYScreenScrolled);
-  }, []);
-
-  useEffect(() => {
-    if (width <= 885) {
-      setIsCollapseMainMenu(true);
-    } else {
-      setIsCollapseMainMenu(false);
-    }
-
-    if (width <= 360) {
-      setIsCollapseRightIcons(true);
-    } else {
-      setIsCollapseRightIcons(false);
-    }
-  }, [width]);
+  });
 
   return (
     <nav
@@ -98,7 +72,7 @@ function Navbar() {
         {isSearchbarFocused && (
           <SearchBar
             placeHolder="Titles, people, genres"
-            handleSearchFocus={handleSearchFocus}
+            handleSearchFocus={handleOnEvent(false, setIsSearchbarFocused)}
           />
         )}
 
@@ -107,7 +81,7 @@ function Navbar() {
             <svg
               className="search-icon"
               onClick={() => {
-                handleSearchFocus(true);
+                handleOnEvent(true, setIsSearchbarFocused);
               }}
               width="24"
               height="24"
@@ -129,10 +103,10 @@ function Navbar() {
           <span
             className="notification"
             onMouseEnter={() => {
-              handleHoverNotification(true);
+              handleOnEvent(true, setIsNotificationHovered);
             }}
             onMouseLeave={() => {
-              handleHoverNotification(false);
+              handleOnEvent(false, setIsNotificationHovered);
             }}
           >
             <svg
@@ -158,10 +132,10 @@ function Navbar() {
 
         <span
           onMouseOver={() => {
-            handleMouseHoverProfileIcon(true);
+            handleOnEvent(true, setIsMouseOnProfileIcon);
           }}
           onMouseOut={() => {
-            handleMouseHoverProfileIcon(false);
+            handleOnEvent(false, setIsMouseOnProfileIcon);
           }}
         >
           <img
