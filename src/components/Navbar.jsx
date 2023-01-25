@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 // STYLES
 import "../styles/Navbar.css";
@@ -16,11 +16,11 @@ import SearchBar from "./SearchBar";
 
 function Navbar() {
   const [isScreenScrolled, setIsScreenScrolled] = useState(false);
-  const [isMouseOnProfileIcon, setIsMouseOnProfileIcon] = useState(false);
+  const [isProfileIconHovered, setIsProfileIconHovered] = useState(false);
   const [isSearchbarFocused, setIsSearchbarFocused] = useState(false);
   const [isCollapseMainMenu, setIsCollapseMainMenu] = useState(false);
   const [isCollapseRightIcons, setIsCollapseRightIcons] = useState(false);
-  const [isBrowseMenuPressed, setIsBrowseMenuPressed] = useState(false);
+  const [isBrowseMenuClicked, setIsBrowseMenuClicked] = useState(false);
   const [isNotificationHovered, setIsNotificationHovered] = useState(false);
   const { width } = useWindowDimensions();
 
@@ -42,18 +42,20 @@ function Navbar() {
     >
       <div className="navbar-left-icon-group">
         <NavLogo />
+
         {!isCollapseMainMenu && <MainMenu />}
+
         {isCollapseMainMenu && (
           <>
             <a
               className="browse-link"
               onClick={() => {
-                setIsBrowseMenuPressed(!isBrowseMenuPressed);
+                setIsBrowseMenuClicked(!isBrowseMenuClicked);
               }}
             >
               Browse
             </a>
-            {isBrowseMenuPressed && <BrowseMenu />}
+            {isBrowseMenuClicked && <BrowseMenu />}
           </>
         )}
       </div>
@@ -122,10 +124,10 @@ function Navbar() {
 
         <span
           onMouseOver={() => {
-            handleOnEvent(true, setIsMouseOnProfileIcon);
+            handleOnEvent(true, setIsProfileIconHovered);
           }}
           onMouseOut={() => {
-            handleOnEvent(false, setIsMouseOnProfileIcon);
+            handleOnEvent(false, setIsProfileIconHovered);
           }}
         >
           <img
@@ -137,10 +139,10 @@ function Navbar() {
           ></img>
           <span
             className={
-              isMouseOnProfileIcon ? "caret isProfileIconActive" : "caret"
+              isProfileIconHovered ? "caret isProfileIconActive" : "caret"
             }
           ></span>
-          {isMouseOnProfileIcon && <ProfileMenu />}
+          {isProfileIconHovered && <ProfileMenu />}
         </span>
       </div>
     </nav>
