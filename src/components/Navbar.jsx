@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
-import getWindowDimensions from "../utils/windowDimensions";
 
 // STYLES
 import "../styles/Navbar.css";
+
+//CUSTOM HOOKS
+import { useScreenWidth } from "./customHooks";
+import getWindowDimensions from "../utils/windowDimensions";
 
 // COMPONENTS
 import NavLogo from "./NavLogo";
@@ -11,9 +14,6 @@ import ProfileMenu from "./ProfileMenu";
 import NotificationMenu from "./NotificationMenu";
 import MainMenu from "./MainMenu";
 import SearchBar from "./SearchBar";
-
-//CUSTOM HOOKS
-import { useScreenWidth } from "./customHooks";
 
 function Navbar() {
   const [isScreenScrolled, setIsScreenScrolled] = useState(false);
