@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import "../styles/Row.css";
+import { useFetchData } from "../utils/customHooks";
 
 const imageBaseUrl = "https://image.tmdb.org/t/p/original/";
 
 function Row({ title, url }) {
   const [shows, setShows] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const request = await axios.get(url);
-      setShows(request.data.results);
-    }
-    fetchData();
-  }, [url]);
-
-  console.log(shows);
+  useFetchData(url, setShows);
 
   return (
     <div className="row">

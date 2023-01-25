@@ -1,6 +1,6 @@
-function MainMenu() {
+function MainMenu({ customClass }) {
   return (
-    <ul className="main-menu">
+    <ul className={customClass}>
       <li>
         <a href="/">Home</a>
       </li>

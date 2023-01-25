@@ -4,11 +4,14 @@ import React, { useState } from "react";
 import "../styles/Navbar.css";
 
 //CUSTOM HOOKS
-import { useScreenWidth, useWindowDimensions, useScroll } from "./customHooks";
+import {
+  useScreenWidth,
+  useWindowDimensions,
+  useScroll,
+} from "../utils/customHooks";
 
 // COMPONENTS
 import NavLogo from "./NavLogo";
-import BrowseMenu from "./BrowseMenu";
 import ProfileMenu from "./ProfileMenu";
 import NotificationMenu from "./NotificationMenu";
 import MainMenu from "./MainMenu";
@@ -43,7 +46,7 @@ function Navbar() {
       <div className="navbar-left-icon-group">
         <NavLogo />
 
-        {!isCollapseMainMenu && <MainMenu />}
+        {!isCollapseMainMenu && <MainMenu customClass="main-menu" />}
 
         {isCollapseMainMenu && (
           <>
@@ -55,7 +58,7 @@ function Navbar() {
             >
               Browse
             </a>
-            {isBrowseMenuClicked && <BrowseMenu />}
+            {isBrowseMenuClicked && <MainMenu customClass="browse-menu" />}
           </>
         )}
       </div>
@@ -135,7 +138,7 @@ function Navbar() {
             height="35"
             width="35"
             src="http://occ-0-6201-1490.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdYJV5wt63AcxNaDoqDXUhqZb55oN5Dxt1m-Zdn_z5rn_hIq9m8dA8JB2xdcPmrY3yXnlVWYKPXnOrbv2QN4aEVU28dESJg.png?r=1d4"
-            alt=""
+            alt="profile icon"
           ></img>
           <span
             className={

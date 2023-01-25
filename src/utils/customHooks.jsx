@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 export const useScreenWidth = (limit, handler, width) => {
   useEffect(() => {
@@ -49,4 +50,14 @@ export const useScroll = (limit, handler) => {
 
     return () => window.removeEventListener("scroll", handleIsYScreenScrolled);
   }, [handler, limit]);
+};
+
+export const useFetchData = (url, handler) => {
+  useEffect(() => {
+    async function fetchData() {
+      const request = await axios.get(url);
+      handler(request.data.results);
+    }
+    fetchData();
+  }, [url, handler]);
 };
