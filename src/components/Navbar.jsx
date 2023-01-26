@@ -8,6 +8,7 @@ import {
   useScreenWidth,
   useWindowDimensions,
   useScroll,
+  useMouseOutside,
 } from "../utils/customHooks";
 
 // COMPONENTS
@@ -38,6 +39,7 @@ function Navbar() {
   useScreenWidth(885, setIsCollapseMainMenu, width);
   useScreenWidth(360, setIsCollapseRightIcons, width);
   useScroll(1, setIsScreenScrolled);
+  const browseMenuRef = useMouseOutside(setIsBrowseMenuClicked);
 
   return (
     <nav
@@ -51,6 +53,7 @@ function Navbar() {
         {isCollapseMainMenu && (
           <>
             <a
+              ref={browseMenuRef}
               className="browse-link"
               onClick={() => {
                 setIsBrowseMenuClicked(!isBrowseMenuClicked);

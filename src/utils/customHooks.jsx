@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 export const useScreenWidth = (limit, handler, width) => {
@@ -60,4 +60,21 @@ export const useFetchData = (url, handler) => {
     }
     fetchData();
   }, [url, handler]);
+};
+
+export const useMouseOutside = (handler) => {
+  let domNode = useRef();
+
+  useEffect(() => {
+    document.addEventListener("mousedown", (event) => {
+      if (!domNode.current.contains(event.target)) {
+        handler(false);
+      }
+    });
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
+  return domNode;
 };
