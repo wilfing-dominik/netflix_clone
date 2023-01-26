@@ -16,14 +16,15 @@ function Row({ title, url }) {
         {shows.map((show) => (
           <>
             {show.backdrop_path != null && (
-              <>
+              <div className="show">
+                <p>{show.name ? show.name : show.title}</p>
                 <img
                   key={show.id}
                   className="row-poster"
                   src={imageBaseUrl + show.backdrop_path}
                   alt={show.name ? show.name : show.title}
                 ></img>
-              </>
+              </div>
             )}
           </>
         ))}
