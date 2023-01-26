@@ -112,6 +112,12 @@
 /* END RIGHT GROUP */
 
 /* BROWSE MENU */
+.browse-menu a {
+  text-align: center;
+  width: 100%;
+  padding: 1em 0em 1em 0em;
+}
+
 .browse-menu {
   margin-top: 3%;
   background-color: rgba(0, 0, 0, 0.945);
@@ -132,7 +138,6 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 1em 0em 1em 0em;
   margin: 0em 0.5em 0em 0.5em;
 }
 

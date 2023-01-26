@@ -57,8 +57,8 @@ function Navbar() {
               }}
             >
               Browse
+              {isBrowseMenuClicked && <MainMenu customClass="browse-menu" />}
             </a>
-            {isBrowseMenuClicked && <MainMenu customClass="browse-menu" />}
           </>
         )}
       </div>
