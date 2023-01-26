@@ -14,12 +14,18 @@ function Row({ title, url }) {
       <h1 className="title">{title}</h1>
       <div className="row-posters">
         {shows.map((show) => (
-          <img
-            key={show.id}
-            className="row-poster"
-            src={imageBaseUrl + show.backdrop_path}
-            alt={show.name}
-          ></img>
+          <>
+            {show.backdrop_path != null && (
+              <>
+                <img
+                  key={show.id}
+                  className="row-poster"
+                  src={imageBaseUrl + show.backdrop_path}
+                  alt={show.name ? show.name : show.title}
+                ></img>
+              </>
+            )}
+          </>
         ))}
       </div>
     </div>
