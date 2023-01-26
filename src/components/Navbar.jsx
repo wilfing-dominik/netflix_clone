@@ -52,7 +52,7 @@ function Navbar() {
 
         {isCollapseMainMenu && (
           <>
-            <a
+            <button
               ref={browseMenuRef}
               className="browse-link"
               onClick={() => {
@@ -61,7 +61,7 @@ function Navbar() {
             >
               Browse
               {isBrowseMenuClicked && <MainMenu customClass="browse-menu" />}
-            </a>
+            </button>
           </>
         )}
       </div>
