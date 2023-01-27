@@ -27,3 +27,17 @@
 .profile-menu li:hover {
   background-color: rgba(56, 55, 55, 0.89);
 }
+
+.profile-menu a {
+  gap: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.signout {
+  border-top: 1px solid white;
+}
+
+.signout a {
+  display: block;
+}
