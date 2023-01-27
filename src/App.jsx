@@ -13,7 +13,7 @@ function App() {
         <Row title={"Now Trending"} url={axios.nowTrending} />
         <Row title={"Action & Adventure"} url={axios.actionAdventure} />
         <Row title={"Comedy"} url={axios.comedy} />
-        <Row title={"Romance"} url={axios.romance} />
+        <Row title={"Horror"} url={axios.horror} />
         <Row title={"Netflix Originals"} url={axios.netflixOriginals} />
       </div>
     </>

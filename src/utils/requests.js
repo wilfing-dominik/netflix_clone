@@ -8,7 +8,7 @@ const requests = {
   netflixOriginals:
     baseUrl + `/discover/tv?api_key=${API_KEY}&with_networks=213`,
   comedy: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=35`,
-  romance: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=10749`,
+  horror: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=27`,
 };
 
 export default requests;
