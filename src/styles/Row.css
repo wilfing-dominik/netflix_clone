@@ -1,10 +1,12 @@
 .row {
-  margin-top: 4em;
+  margin-top: 2em;
   margin-left: 3.5em;
 }
 
 .row h1 {
   font-size: 1.8em;
+  text-shadow: 2px 2px 2px #000000;
+  margin-bottom: 0;
 }
 
 .row-posters {
