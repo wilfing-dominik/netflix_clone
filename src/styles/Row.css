@@ -3,6 +3,10 @@
   margin-left: 3.5em;
 }
 
+.row h1 {
+  font-size: 1.8em;
+}
+
 .row-posters {
   display: flex;
   flex-direction: row;
@@ -17,13 +21,11 @@
 .row-posters p {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-
   padding-left: 0.3em;
   padding-top: 0.3em;
   padding-bottom: 0.3em;
   text-shadow: 1px 1px 1px #000000;
   background-color: #c92f2f;
-  width: 19.55em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -43,8 +45,7 @@
 
 .row-poster {
   object-fit: contain;
-  min-height: 4em;
-  height: 12em;
+  height: 12rem;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
