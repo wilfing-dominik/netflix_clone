@@ -1,15 +1,31 @@
 import React from "react";
+import { imageBaseUrl } from "../utils/requests";
 
-function Notification() {
+function Notification({ show }) {
+  const releaseDate = {
+    year:
+      show.first_air_date[0] +
+      show.first_air_date[1] +
+      show.first_air_date[2] +
+      show.first_air_date[3],
+    month: show.first_air_date[5] + show.first_air_date[6],
+    day: show.first_air_date[8] + show.first_air_date[9],
+  };
+
   return (
     <li>
       <a href="/">
         <img
           className="notification-image"
-          src="https://dnm.nflximg.net/api/v6/kvDymu0eXRyicIuSUzvRrxrm5dU/AAAABYzX-Cw1EXdGP6v4e8fKfoqDwHwIGCIiLJD1-84WVjUNclInu6fYGEaNUE7xjk07YGfbfCpO7RXWpi5zn7xzLbNfTOBHoowK60iH0gfEICqnifpzFlM4EfyNUaKDz7l7-R53Wo3BcZ9cSqU.jpg?r=420"
-          alt="notificaton"
+          src={imageBaseUrl + show.backdrop_path}
+          alt={show.name}
         />
-        <p>Notification message</p>
+        <div>
+          <p>{show.name}</p>
+          <p className="date">
+            {releaseDate.month}/{releaseDate.day}
+          </p>
+        </div>
       </a>
     </li>
   );
