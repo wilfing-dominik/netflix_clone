@@ -1,17 +1,29 @@
 .notification-menu {
   right: 60px;
   position: absolute;
-  max-height: 40vh;
+  max-height: 50vh;
+  min-width: 380px;
   overflow-y: scroll;
 }
 
-.notification-menu li:first-of-type {
-  border-top: 1px solid white;
+.notification-menu h1 {
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  margin: 0;
+  border-top: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.89);
 }
 
 .notification-menu li {
-  text-align: center;
-  padding: 1.5em 1.5em 1.5em 0.5em;
+  border-bottom: 1px solid grey;
+  border-right: 1px solid grey;
+  border-left: 1px solid grey;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  padding-left: 0.5em;
+  padding-right: 1em;
   background-color: rgba(0, 0, 0, 0.89);
 }
 
@@ -21,10 +33,17 @@
 
 .notification-menu a {
   display: flex;
+  gap: 1.5em;
   align-items: center;
-  justify-content: center;
+  /* justify-content: space-between; */
 }
 
 .notification-menu img {
-  margin-right: 1em;
+  border-radius: 5px;
+  height: 6em;
+  object-fit: contain;
+}
+
+.date {
+  color: gray;
 }
