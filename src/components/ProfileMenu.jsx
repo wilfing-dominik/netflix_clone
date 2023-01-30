@@ -18,7 +18,7 @@ function ProfileMenu() {
 
       <li>
         <a href="/">
-          {/* This SVG doesn' work when importes, for some reason */}
+          {/* This SVG doesn't work when imported, for some reason */}
           <svg
             id="profile-transfer"
             width="24"

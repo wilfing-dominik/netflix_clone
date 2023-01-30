@@ -18,7 +18,7 @@ function Notification({ show }) {
         <img
           className="notification-image"
           src={imageBaseUrl + show.backdrop_path}
-          alt={show.name}
+          alt="missing"
         />
         <div>
           <p>{show.name}</p>
