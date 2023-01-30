@@ -47,7 +47,7 @@
 
 .row-poster {
   object-fit: contain;
-  height: 12rem;
+  height: 11rem;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
