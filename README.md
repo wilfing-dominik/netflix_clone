@@ -5,6 +5,7 @@
 
 - This React JS project aims to copy the main page of Netflix's website
 - It uses TMDB's public API to fetch movies and TV shows by genres
+- Responsive design
 
 ### API features
 - Lists TV shows and movies by genres in rows ordered by popularity (can be scrolled with shift + mouse wheel or mousepad)
