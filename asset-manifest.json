@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/netflix-clone/static/css/main.7848c8ac.css",
-    "main.js": "/netflix-clone/static/js/main.0ff02332.js",
-    "static/js/787.440c4889.chunk.js": "/netflix-clone/static/js/787.440c4889.chunk.js",
-    "static/media/main_wallpaper.jpg": "/netflix-clone/static/media/main_wallpaper.45f7fd14d50b2474aa63.jpg",
-    "static/media/main_logo.png": "/netflix-clone/static/media/main_logo.44d21ab27dd123d6a6b6.png",
-    "static/media/help_center.svg": "/netflix-clone/static/media/help_center.31b62132eddff8f7af97479bf7f1a61b.svg",
-    "static/media/account.svg": "/netflix-clone/static/media/account.c1b1327227f9eea4af995b22118bc9e7.svg",
-    "index.html": "/netflix-clone/index.html",
-    "static/media/manage_profiles.svg": "/netflix-clone/static/media/manage_profiles.c09d08ce03652288a3dbd98155c10b81.svg",
-    "main.7848c8ac.css.map": "/netflix-clone/static/css/main.7848c8ac.css.map",
-    "main.0ff02332.js.map": "/netflix-clone/static/js/main.0ff02332.js.map",
-    "787.440c4889.chunk.js.map": "/netflix-clone/static/js/787.440c4889.chunk.js.map"
+    "main.css": "/Netflix-Clone/static/css/main.c6ee84ff.css",
+    "main.js": "/Netflix-Clone/static/js/main.4b1cec57.js",
+    "static/js/787.440c4889.chunk.js": "/Netflix-Clone/static/js/787.440c4889.chunk.js",
+    "static/media/main_wallpaper.jpg": "/Netflix-Clone/static/media/main_wallpaper.45f7fd14d50b2474aa63.jpg",
+    "static/media/main_logo.png": "/Netflix-Clone/static/media/main_logo.44d21ab27dd123d6a6b6.png",
+    "static/media/help_center.svg": "/Netflix-Clone/static/media/help_center.31b62132eddff8f7af97479bf7f1a61b.svg",
+    "static/media/account.svg": "/Netflix-Clone/static/media/account.c1b1327227f9eea4af995b22118bc9e7.svg",
+    "index.html": "/Netflix-Clone/index.html",
+    "static/media/manage_profiles.svg": "/Netflix-Clone/static/media/manage_profiles.c09d08ce03652288a3dbd98155c10b81.svg",
+    "main.c6ee84ff.css.map": "/Netflix-Clone/static/css/main.c6ee84ff.css.map",
+    "main.4b1cec57.js.map": "/Netflix-Clone/static/js/main.4b1cec57.js.map",
+    "787.440c4889.chunk.js.map": "/Netflix-Clone/static/js/787.440c4889.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7848c8ac.css",
-    "static/js/main.0ff02332.js"
+    "static/css/main.c6ee84ff.css",
+    "static/js/main.4b1cec57.js"
   ]
 }
