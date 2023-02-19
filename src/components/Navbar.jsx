@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useFetchData } from "../utils/customHooks";
+import axios from "../utils/requests";
 
 // STYLES
 import "../styles/Navbar.css";
@@ -26,7 +28,11 @@ function Navbar() {
   const [isCollapseRightIcons, setIsCollapseRightIcons] = useState(false);
   const [isBrowseMenuClicked, setIsBrowseMenuClicked] = useState(false);
   const [isNotificationHovered, setIsNotificationHovered] = useState(false);
+  const [newReleases, setNewReleases] = useState([]);
+
   const { width } = useWindowDimensions();
+
+  useFetchData(axios.arrivals, setNewReleases);
 
   const handleOnEvent = (event, handler) => {
     if (event) {
@@ -125,7 +131,9 @@ function Navbar() {
               ></path>
             </svg>
             <div className="notification-wrapper">
-              {isNotificationHovered && <NotificationMenu />}
+              {isNotificationHovered && (
+                <NotificationMenu newReleases={newReleases} />
+              )}
             </div>
           </span>
         )}
