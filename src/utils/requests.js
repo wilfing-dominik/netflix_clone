@@ -18,6 +18,7 @@ const requests = {
   arrivals:
     baseUrl +
     `/discover/tv?api_key=${API_KEY}&first_air_date.gte=${aWeekBeforeCurrentDate}&first_air_date.lte=${currentDate}&language=en-US&region=US&sort_by=popularity.desc&page=1&with_origin_country=US`,
+  allTVShows: baseUrl + `/discover/tv?api_key=${API_KEY}`, //TODO
 };
 
 export default requests;

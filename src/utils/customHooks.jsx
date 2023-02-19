@@ -62,6 +62,17 @@ export const useFetchData = (url, handler) => {
   }, [url, handler]);
 };
 
+//TODO
+export const useFilterData = (url, handler, input) => {
+  useEffect(() => {
+    async function fetchData() {
+      const request = await axios.get(url);
+      handler(request.data.results);
+    }
+    fetchData();
+  }, [url, handler, input]);
+};
+
 export const useMouseOutside = (handler) => {
   let domNode = useRef();
 
