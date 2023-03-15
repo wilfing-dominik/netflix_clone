@@ -1,8 +1,6 @@
 import React from "react";
 import "../styles/NotificationMenu.css";
 import Notification from "./Notification";
-// import axios from "../utils/requests";
-// import { useFetchData } from "../utils/customHooks";
 
 function NotificationMenu({ newReleases }) {
   return (
