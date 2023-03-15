@@ -32,7 +32,7 @@
 }
 
 .logo {
-  width: 15%;
+  width: 7em;
 }
 
 /* Without this the logo isn't aligned vertically */
@@ -41,9 +41,10 @@
 }
 
 .browse-link {
+  font-size: 0.7rem;
   display: flex;
   align-items: center;
-  margin-left: 1.1em;
+  margin-left: 0.6em;
   cursor: pointer;
   background-color: transparent;
 }

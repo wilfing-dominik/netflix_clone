@@ -4,7 +4,7 @@
 }
 
 .row h1 {
-  font-size: 1.7vw;
+  font-size: calc(0.8rem + 1vw);
   text-shadow: 2px 2px 2px #000000;
   margin-bottom: 0;
 }
@@ -55,8 +55,15 @@
 .show {
   transition: transform 0.5s ease-in-out;
   width: 18vw;
+  min-width: 160px;
 }
 
 .show:hover {
   transform: scale(1.1);
+}
+
+@media only screen and (max-width: 600px) {
+  .row {
+    margin-left: 0;
+  }
 }
