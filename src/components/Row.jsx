@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import "../styles/Row.css";
-import { useFetchData } from "../utils/customHooks";
 import { imageBaseUrl } from "../utils/requests";
 
-function Row({ title, url }) {
-  const [shows, setShows] = useState([]);
-
-  useFetchData(url, setShows);
+function Row({ title, data }) {
+  const [shows] = useState(data);
 
   return (
     <div className="row">
