@@ -5,7 +5,7 @@ import Notification from "./Notification";
 function NotificationMenu({ newReleases }) {
   return (
     <ul className="notification-menu">
-      <h1>New arrivals</h1>
+      <h1 className="title">New arrivals</h1>
       {newReleases.map(
         (newRelease) =>
           newRelease.backdrop_path != null && (

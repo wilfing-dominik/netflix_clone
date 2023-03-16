@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import requests from "../src/utils/requests";
-import Row from "./components/Row";
+import axios from "axios";
+
+// Components
 import Navbar from "./components/Navbar";
 import PrimaryShow from "./components/PrimaryShow";
-import axios from "axios";
-import ClipLoader from "react-spinners/ClipLoader";
+import Row from "./components/Row";
+import Spinner from "./components/Spinner";
 
 function App() {
-  const [shows, setShows] = useState([]);
+  const [fetchData, setShows] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // Fetch all shows
@@ -19,6 +21,7 @@ function App() {
         axios.get(requests.comedy),
         axios.get(requests.horror),
         axios.get(requests.netflixOriginals),
+        axios.get(requests.arrivals),
       ]);
       setShows(response);
       setLoading(false);
@@ -26,38 +29,18 @@ function App() {
     getData();
   }, []);
 
-  const style = {
-    position: "fixed",
-    top: "40%",
-    left: "45%",
-    transform: "translate(-50%, -50%)",
-    color: "#ffffff",
-  };
-
-  if (loading)
-    return (
-      <>
-        <ClipLoader
-          color={"#ffffff"}
-          loading={loading}
-          cssOverride={style}
-          size={150}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
-      </>
-    );
+  if (loading) return <Spinner loading={loading} />;
 
   return (
     <>
-      <Navbar />
+      <Navbar arrivals={fetchData[5].data.results} />
       <PrimaryShow />
       <div className="rows">
-        <Row title={"Now Trending"} data={shows[0].data.results} />
-        <Row title={"Action & Adventure"} data={shows[1].data.results} />
-        <Row title={"Comedy"} data={shows[2].data.results} />
-        <Row title={"Horror"} data={shows[3].data.results} />
-        <Row title={"Netflix Originals"} data={shows[4].data.results} />
+        <Row title={"Now Trending"} data={fetchData[0].data.results} />
+        <Row title={"Action & Adventure"} data={fetchData[1].data.results} />
+        <Row title={"Comedy"} data={fetchData[2].data.results} />
+        <Row title={"Horror"} data={fetchData[3].data.results} />
+        <Row title={"Netflix Originals"} data={fetchData[4].data.results} />
       </div>
     </>
   );

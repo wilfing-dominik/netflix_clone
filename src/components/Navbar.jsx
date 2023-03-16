@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { useFetchData } from "../utils/customHooks";
-import axios from "../utils/requests";
 
 // STYLES
 import "../styles/Navbar.css";
@@ -20,7 +18,7 @@ import NotificationMenu from "./NotificationMenu";
 import MainMenu from "./MainMenu";
 import SearchBar from "./SearchBar";
 
-function Navbar() {
+function Navbar({ arrivals }) {
   const [isScreenScrolled, setIsScreenScrolled] = useState(false);
   const [isProfileIconHovered, setIsProfileIconHovered] = useState(false);
   const [isSearchBarFocused, setIsSearchBarFocused] = useState(false);
@@ -28,11 +26,9 @@ function Navbar() {
   const [isCollapseRightIcons, setIsCollapseRightIcons] = useState(false);
   const [isBrowseMenuClicked, setIsBrowseMenuClicked] = useState(false);
   const [isNotificationHovered, setIsNotificationHovered] = useState(false);
-  const [newReleases, setNewReleases] = useState([]);
+  const [newReleases] = useState(arrivals);
 
   const { width } = useWindowDimensions();
-
-  useFetchData(axios.arrivals, setNewReleases);
 
   const handleOnEvent = (event, handler) => {
     if (event) {
