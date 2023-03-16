@@ -4,11 +4,13 @@ import Row from "./components/Row";
 import Navbar from "./components/Navbar";
 import PrimaryShow from "./components/PrimaryShow";
 import axios from "axios";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function App() {
   const [shows, setShows] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Fetch all shows
   useEffect(() => {
     const getData = async () => {
       let response = await axios.all([
@@ -24,7 +26,27 @@ function App() {
     getData();
   }, []);
 
-  if (loading) return <>Loading...</>;
+  const style = {
+    position: "fixed",
+    top: "40%",
+    left: "45%",
+    transform: "translate(-50%, -50%)",
+    color: "#ffffff",
+  };
+
+  if (loading)
+    return (
+      <>
+        <ClipLoader
+          color={"#ffffff"}
+          loading={loading}
+          cssOverride={style}
+          size={150}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      </>
+    );
 
   return (
     <>
