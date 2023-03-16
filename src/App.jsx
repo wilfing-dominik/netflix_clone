@@ -23,8 +23,10 @@ function App() {
         axios.get(requests.netflixOriginals),
         axios.get(requests.arrivals),
       ]);
-      setShows(response);
+      let body = document.querySelector("body");
       setLoading(false);
+      body.classList.add("loaded");
+      setShows(response);
     };
     getData();
   }, []);

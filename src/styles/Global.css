@@ -4,9 +4,12 @@ body {
   max-width: 100%;
   margin: auto;
   background-color: #141414;
-  background-image: url(../assets/main_wallpaper.jpg);
   background-repeat: no-repeat;
   background-size: 100vw;
+}
+
+.loaded {
+  background-image: url(../assets/main_wallpaper.jpg);
 }
 
 ul {
