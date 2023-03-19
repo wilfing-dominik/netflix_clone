@@ -4,7 +4,11 @@ import "./BannerShow.css";
 function PrimaryShow() {
   return (
     <div className="primary-show">
-      <img width="50%" src={require("../../assets/main_logo.png")} alt="" />
+      <img
+        width="50%"
+        src={require("../../assets/BannerShow/banner_logo.png")}
+        alt=""
+      />
       <h1>Watch Season 1 Now</h1>
       <div className="button-wrapper">
         <button className="play">Play</button>

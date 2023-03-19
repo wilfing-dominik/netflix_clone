@@ -9,7 +9,7 @@ import {
   useWindowDimensions,
   useScroll,
   useMouseOutside,
-} from "../../utils/customHooks";
+} from "../../utils/CustomHooks";
 
 // COMPONENTS
 import NavLogo from "../NavLogo/NavLogo";
