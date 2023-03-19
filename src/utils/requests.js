@@ -40,7 +40,8 @@ export const fetchAllData = async (handler, loader) => {
       axios.get(requests.arrivals),
     ]);
 
-    let data = {
+    // Formats the fetch data to an object
+    let formattedData = {
       nowTrending: response[0].data.results,
       actionAdventure: response[1].data.results,
       comedy: response[2].data.results,
@@ -53,7 +54,7 @@ export const fetchAllData = async (handler, loader) => {
     let body = document.querySelector("body");
     body.classList.add("loaded");
 
-    handler(data);
+    handler(formattedData);
     loader(false);
   } catch (error) {
     console.log(error);

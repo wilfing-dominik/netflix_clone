@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { fetchAllData } from "./utils/requests";
 
 // Components
-import Navbar from "./components/Navbar";
-import PrimaryShow from "./components/PrimaryShow";
-import Row from "./components/Row";
-import Spinner from "./components/Spinner";
+import Navbar from "./components/Navbar/Navbar";
+import PrimaryShow from "./components/BannerShow/BannerShow";
+import Row from "./components/Row/Row";
+import Spinner from "./components/Spinner/Spinner";
 
 function App() {
   const [loading, setLoading] = useState(true);

@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/NotificationMenu.css";
-import Notification from "./Notification";
+import "./ArrivalMenu.css";
+import Notification from "../Arrival/Arrival";
 
 function NotificationMenu({ newReleases }) {
   return (

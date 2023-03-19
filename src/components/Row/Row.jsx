@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../styles/Row.css";
-import { imageBaseUrl } from "../utils/requests";
+import ".//Row.css";
+import { imageBaseUrl } from "../../utils/requests";
 
 function Row({ title, data }) {
   const [shows] = useState(data);

@@ -1,10 +1,10 @@
 import React from "react";
-import "../styles/ProfileMenu.css";
+import ".//ProfileMenu.css";
 
 //SVGS
-import ManageProfiles from "../assets/profile_menu_icons/manage_profiles.svg";
-import Account from "../assets/profile_menu_icons/account.svg";
-import HelpCenter from "../assets/profile_menu_icons/help_center.svg";
+import ManageProfiles from "../../assets/profile_menu_icons/manage_profiles.svg";
+import Account from "../../assets/profile_menu_icons/account.svg";
+import HelpCenter from "../../assets/profile_menu_icons/help_center.svg";
 
 function ProfileMenu() {
   return (

@@ -1,8 +1,7 @@
-import React from "react";
-import { useState } from "react";
-import "../styles/SearchBar.css";
-import axios from "../utils/requests";
-import { useFetchData } from "../utils/customHooks";
+import React, { useState } from "react";
+import "./SearchBar.css";
+import axios from "axios";
+import { useFetchData } from "../../utils/customHooks";
 
 export default function SearchBar({ placeHolder, setIsSearchBarFocused }) {
   const [input, setInput] = useState("");

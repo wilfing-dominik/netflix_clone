@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // STYLES
-import "../styles/Navbar.css";
+import "./Navbar.css";
 
 //CUSTOM HOOKS
 import {
@@ -9,14 +9,14 @@ import {
   useWindowDimensions,
   useScroll,
   useMouseOutside,
-} from "../utils/customHooks";
+} from "../../utils/customHooks";
 
 // COMPONENTS
-import NavLogo from "./NavLogo";
-import ProfileMenu from "./ProfileMenu";
-import NotificationMenu from "./NotificationMenu";
-import MainMenu from "./MainMenu";
-import SearchBar from "./SearchBar";
+import NavLogo from "../NavLogo/NavLogo";
+import ProfileMenu from "../ProfileMenu/ProfileMenu";
+import NotificationMenu from "../ArrivalMenu/ArrivalMenu";
+import MainMenu from "../MainMenu/MainMenu";
+import SearchBar from "../Searchbar/SearchBar";
 
 function Navbar({ arrivals }) {
   const [newReleases] = useState(arrivals);

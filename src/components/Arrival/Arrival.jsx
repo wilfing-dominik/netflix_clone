@@ -1,5 +1,5 @@
 import React from "react";
-import { imageBaseUrl } from "../utils/requests";
+import { imageBaseUrl } from "../../utils/requests";
 
 function Notification({ show }) {
   //Formats the first air date of the show
