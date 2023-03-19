@@ -19,6 +19,8 @@ import MainMenu from "./MainMenu";
 import SearchBar from "./SearchBar";
 
 function Navbar({ arrivals }) {
+  const [newReleases] = useState(arrivals);
+
   const [isScreenScrolled, setIsScreenScrolled] = useState(false);
   const [isProfileIconHovered, setIsProfileIconHovered] = useState(false);
   const [isSearchBarFocused, setIsSearchBarFocused] = useState(false);
@@ -26,9 +28,13 @@ function Navbar({ arrivals }) {
   const [isCollapseRightIcons, setIsCollapseRightIcons] = useState(false);
   const [isBrowseMenuClicked, setIsBrowseMenuClicked] = useState(false);
   const [isNotificationHovered, setIsNotificationHovered] = useState(false);
-  const [newReleases] = useState(arrivals);
 
   const { width } = useWindowDimensions();
+  useScreenWidth(885, setIsCollapseMainMenu, width);
+  useScreenWidth(360, setIsCollapseRightIcons, width);
+  useScroll(1, setIsScreenScrolled);
+
+  const browseMenuRef = useMouseOutside(setIsBrowseMenuClicked);
 
   const handleOnEvent = (event, handler) => {
     if (event) {
@@ -37,11 +43,6 @@ function Navbar({ arrivals }) {
     }
     handler(false);
   };
-
-  useScreenWidth(885, setIsCollapseMainMenu, width);
-  useScreenWidth(360, setIsCollapseRightIcons, width);
-  useScroll(1, setIsScreenScrolled);
-  const browseMenuRef = useMouseOutside(setIsBrowseMenuClicked);
 
   return (
     <nav

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
+// Changes the handler's state to false or true, depending on wether the width of the screen is reached the limit or not
 export const useScreenWidth = (limit, handler, width) => {
   useEffect(() => {
     if (width <= limit) {
@@ -11,6 +12,7 @@ export const useScreenWidth = (limit, handler, width) => {
   }, [width, handler, limit]);
 };
 
+// Returns the current height and with of the screen in pixels
 export function useWindowDimensions() {
   function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -36,6 +38,7 @@ export function useWindowDimensions() {
   return windowDimensions;
 }
 
+// Changes the handler's state to false, if the horizontal scrolling on the screen reached the limit
 export const useScroll = (limit, handler) => {
   useEffect(() => {
     const handleIsYScreenScrolled = () => {
@@ -52,6 +55,7 @@ export const useScroll = (limit, handler) => {
   }, [handler, limit]);
 };
 
+// Old implementation, soon to be removed
 export const useFetchData = (url, handler) => {
   useEffect(() => {
     async function fetchData() {
@@ -73,19 +77,25 @@ export const useFilterData = (url, handler, input) => {
   }, [url, handler, input]);
 };
 
+// Changes the handler's state to false, if the mouse is inside or outside the element it's attached to during an event
 export const useMouseOutside = (handler) => {
   let domNode = useRef();
 
   useEffect(() => {
-    document.addEventListener("mousedown", (event) => {
-      if (!domNode.current.contains(event.target)) {
-        handler(false);
-      }
-    });
+    document.addEventListener(
+      "mousedown",
+      (event) => {
+        if (!domNode.current.contains(event.target)) {
+          handler(false);
+        }
+      },
+      []
+    );
 
     return () => {
       document.removeEventListener("mousedown", handler);
     };
   });
+
   return domNode;
 };

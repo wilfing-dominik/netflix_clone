@@ -1,14 +1,13 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../styles/SearchBar.css";
 import axios from "../utils/requests";
-import { useFetchData, useFilterData } from "../utils/customHooks";
+import { useFetchData } from "../utils/customHooks";
 
 export default function SearchBar({ placeHolder, setIsSearchBarFocused }) {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
 
-  // useFilterData(axios.nowTrending, setResults, input);
   useFetchData(axios.allTVShows, setResults);
 
   return (

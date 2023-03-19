@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import requests from "../src/utils/requests";
-import axios from "axios";
+import { fetchAllData } from "./utils/requests";
 
 // Components
 import Navbar from "./components/Navbar";
@@ -9,40 +8,26 @@ import Row from "./components/Row";
 import Spinner from "./components/Spinner";
 
 function App() {
-  const [fetchData, setShows] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
 
-  // Fetch all shows
+  // Fetch all external
   useEffect(() => {
-    const getData = async () => {
-      let response = await axios.all([
-        axios.get(requests.nowTrending),
-        axios.get(requests.actionAdventure),
-        axios.get(requests.comedy),
-        axios.get(requests.horror),
-        axios.get(requests.netflixOriginals),
-        axios.get(requests.arrivals),
-      ]);
-      let body = document.querySelector("body");
-      setLoading(false);
-      body.classList.add("loaded");
-      setShows(response);
-    };
-    getData();
+    fetchAllData(setData, setLoading);
   }, []);
 
   if (loading) return <Spinner loading={loading} />;
 
   return (
     <>
-      <Navbar arrivals={fetchData[5].data.results} />
+      <Navbar arrivals={data.arrivals} />
       <PrimaryShow />
       <div className="rows">
-        <Row title={"Now Trending"} data={fetchData[0].data.results} />
-        <Row title={"Action & Adventure"} data={fetchData[1].data.results} />
-        <Row title={"Comedy"} data={fetchData[2].data.results} />
-        <Row title={"Horror"} data={fetchData[3].data.results} />
-        <Row title={"Netflix Originals"} data={fetchData[4].data.results} />
+        <Row title={"Now Trending"} data={data.nowTrending} />
+        <Row title={"Action & Adventure"} data={data.actionAdventure} />
+        <Row title={"Comedy"} data={data.comedy} />
+        <Row title={"Horror"} data={data.horror} />
+        <Row title={"Netflix Originals"} data={data.netflixOriginals} />
       </div>
     </>
   );

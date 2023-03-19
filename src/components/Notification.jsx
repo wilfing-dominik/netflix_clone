@@ -2,14 +2,12 @@ import React from "react";
 import { imageBaseUrl } from "../utils/requests";
 
 function Notification({ show }) {
+  //Formats the first air date of the show
+  let date = show.first_air_date.split("-");
   const releaseDate = {
-    year:
-      show.first_air_date[0] +
-      show.first_air_date[1] +
-      show.first_air_date[2] +
-      show.first_air_date[3],
-    month: show.first_air_date[5] + show.first_air_date[6],
-    day: show.first_air_date[8] + show.first_air_date[9],
+    year: date[0],
+    month: date[1],
+    day: date[2],
   };
 
   return (
