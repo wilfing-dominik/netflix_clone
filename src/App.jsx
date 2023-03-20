@@ -6,6 +6,7 @@ import Spinner from "./components/Spinner/Spinner";
 import Navbar from "./components/Navbar/Navbar";
 import BannerShow from "./components/BannerShow/BannerShow";
 import Row from "./components/Row/Row";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -31,6 +32,7 @@ function App() {
           <Row title={"Netflix Originals"} data={data.netflixOriginals} />
         </div>
       </main>
+      <Footer />
     </>
   );
 }

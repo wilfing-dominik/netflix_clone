@@ -43,6 +43,12 @@ main {
   margin-left: 3.5em;
 }
 
+@media only screen and (max-width: 600px) {
+  main {
+    margin-left: 0.4em;
+  }
+}
+
 .loaded {
   background-image: url(./assets/BannerShow/banner_background.jpg);
 }
