@@ -28,7 +28,7 @@
 /* LEFT GROUP */
 .navbar-left-icon-group {
   position: fixed;
-  left: 15px;
+  left: 30px;
 }
 
 .logo {
@@ -82,7 +82,7 @@
 
 .navbar-right-icon-group {
   position: fixed;
-  right: 30px;
+  right: 45px;
 }
 
 .navbar-right-icon-group span {

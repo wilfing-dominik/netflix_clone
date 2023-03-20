@@ -1,6 +1,6 @@
-/* .row {
-  margin-left: 3.5em;
-} */
+.row {
+  margin-bottom: 1.8em;
+}
 
 .row h1 {
   font-size: calc(0.8rem + 1vw);
