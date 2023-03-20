@@ -29,36 +29,25 @@ const requests = {
 };
 
 // Fetches all data, that is need for the page to work, sets up page for initial use
-export const fetchAllData = async (handler, loader) => {
-  try {
-    let response = await axios.all([
-      axios.get(requests.nowTrending),
-      axios.get(requests.actionAdventure),
-      axios.get(requests.comedy),
-      axios.get(requests.horror),
-      axios.get(requests.netflixOriginals),
-      axios.get(requests.arrivals),
-    ]);
+export const fetchAllData = async () => {
+  let response = await axios.all([
+    axios.get(requests.nowTrending),
+    axios.get(requests.actionAdventure),
+    axios.get(requests.comedy),
+    axios.get(requests.horror),
+    axios.get(requests.netflixOriginals),
+    axios.get(requests.arrivals),
+  ]);
 
-    // Formats the fetch data to an object
-    let formattedData = {
-      nowTrending: response[0].data.results,
-      actionAdventure: response[1].data.results,
-      comedy: response[2].data.results,
-      horror: response[3].data.results,
-      netflixOriginals: response[4].data.results,
-      arrivals: response[5].data.results,
-    };
-
-    // Sets bacground image after API call is finished
-    let body = document.querySelector("body");
-    body.classList.add("loaded");
-
-    handler(formattedData);
-    loader(false);
-  } catch (error) {
-    console.log(error);
-  }
+  // Formats the fetch data to an object
+  return {
+    nowTrending: response[0].data.results,
+    actionAdventure: response[1].data.results,
+    comedy: response[2].data.results,
+    horror: response[3].data.results,
+    netflixOriginals: response[4].data.results,
+    arrivals: response[5].data.results,
+  };
 };
 
 export default requests;

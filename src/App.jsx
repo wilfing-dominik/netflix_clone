@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { fetchAllData } from "./utils/requests";
+import React, { useEffect, useState, useCallback } from "react";
+import { fetchAllData as fetchData } from "./utils/requests";
 
 // Components
 import Spinner from "./components/Spinner/Spinner";
@@ -11,13 +11,29 @@ import Footer from "./components/Footer/Footer";
 function App() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
 
-  // Fetch all external
-  useEffect(() => {
-    fetchAllData(setData, setLoading);
+  const getData = useCallback(() => {
+    fetchData()
+      .then((response) => {
+        // Sets background image after API call is finished
+        let body = document.querySelector("body");
+        body.classList.add("loaded");
+
+        setData(response);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+      });
   }, []);
 
-  if (loading) return <Spinner loading={loading} />;
+  useEffect(() => {
+    getData();
+  }, [getData]);
+
+  if (error) return error.message;
+  else if (loading) return <Spinner loading={loading} />;
 
   return (
     <>
