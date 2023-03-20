@@ -1,8 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+} */
+
+* {
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.93rem;
+  color: white;
 }
 
 body {
@@ -22,25 +31,20 @@ body {
   background-size: 100vw;
 }
 
-.loaded {
-  background-image: url(./assets/BannerShow/banner_background.jpg);
-}
-
 ul {
   list-style-type: none;
 }
 
-* {
-  user-select: none;
-  margin: 0;
-  padding: 0;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 0.93rem;
-  color: white;
-}
-
 a {
   text-decoration: none;
+}
+
+main {
+  margin-left: 2.5em;
+}
+
+.loaded {
+  background-image: url(./assets/BannerShow/banner_background.jpg);
 }
 
 .rows {

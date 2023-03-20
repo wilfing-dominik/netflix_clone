@@ -2,9 +2,9 @@ import React from "react";
 import ".//ProfileMenu.css";
 
 //SVGS
-import ManageProfiles from "../../assets/profile_menu_icons/manage_profiles.svg";
-import Account from "../../assets/profile_menu_icons/account.svg";
-import HelpCenter from "../../assets/profile_menu_icons/help_center.svg";
+import ManageProfiles from "../../assets/ProfileMenu/manage_profiles.svg";
+import Account from "../../assets/ProfileMenu/account.svg";
+import HelpCenter from "../../assets/ProfileMenu/help_center.svg";
 
 function ProfileMenu() {
   return (
