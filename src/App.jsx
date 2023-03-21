@@ -16,7 +16,7 @@ function App() {
   const getData = useCallback(() => {
     fetchData()
       .then((response) => {
-        // Sets background image after API call is finished
+        // Sets background image
         let body = document.querySelector("body");
         body.classList.add("loaded");
 

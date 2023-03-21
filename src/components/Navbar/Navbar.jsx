@@ -14,7 +14,7 @@ import {
 // COMPONENTS
 import NavLogo from "../NavLogo/NavLogo";
 import ProfileMenu from "../ProfileMenu/ProfileMenu";
-import NotificationMenu from "../ArrivalMenu/ArrivalMenu";
+import ArrivalMenu from "../ArrivalMenu/ArrivalMenu";
 import MainMenu from "../MainMenu/MainMenu";
 import SearchBar from "../Searchbar/SearchBar";
 
@@ -132,7 +132,7 @@ function Navbar({ arrivals }) {
               </svg>
               <div className="notification-wrapper">
                 {isNotificationHovered && (
-                  <NotificationMenu newReleases={newReleases} />
+                  <ArrivalMenu newReleases={newReleases} />
                 )}
               </div>
             </span>

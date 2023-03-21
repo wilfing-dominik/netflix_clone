@@ -1,7 +1,7 @@
 import React from "react";
 import { imageBaseUrl } from "../../utils/requests";
 
-function Notification({ show }) {
+function Arrival({ show }) {
   //Formats the first air date of the show
   let date = show.first_air_date.split("-");
   const releaseDate = {
@@ -29,4 +29,4 @@ function Notification({ show }) {
   );
 }
 
-export default Notification;
+export default Arrival;
