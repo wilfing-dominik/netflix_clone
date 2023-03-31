@@ -1,56 +1,54 @@
-import React, { useEffect, useState, useCallback } from "react";
-import { fetchAllData as fetchData } from "./utils/requests";
+import React from "react";
+import {
+  Route,
+  createRoutesFromElements,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { requests } from "./utils/requests";
 
 // Components
-import Spinner from "./components/Spinner/Spinner";
 import Navbar from "./components/Navbar/Navbar";
-import BannerShow from "./components/BannerShow/BannerShow";
-import Row from "./components/Row/Row";
-import Footer from "./components/Footer/Footer";
+import Rows from "./components/Rows/Rows";
 
-function App() {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(null);
-
-  const getData = useCallback(() => {
-    fetchData()
-      .then((response) => {
-        // Sets background image
-        let body = document.querySelector("body");
-        body.classList.add("loaded");
-
-        setData(response);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err);
-      });
-  }, []);
-
-  useEffect(() => {
-    getData();
-  }, [getData]);
-
-  if (error) return error.message;
-  else if (loading) return <Spinner loading={loading} />;
+export default function App() {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <>
+        <Route index path="/" element={<Rows requests={requests.home} />} />
+        <Route
+          index
+          path="/tv-shows"
+          element={<Rows requests={requests.shows} />}
+        />
+        <Route
+          index
+          path="/movies"
+          element={<Rows requests={requests.movies} />}
+        />
+        <Route
+          index
+          path="/trending"
+          element={<Rows requests={requests.trending} />}
+        />
+        <Route
+          index
+          path="/my-list"
+          element={<Rows requests={requests.trending} />}
+        />
+        <Route
+          index
+          path="/browse-language"
+          element={<Rows requests={requests.trending} />}
+        />
+      </>
+    )
+  );
 
   return (
     <>
-      <Navbar arrivals={data.arrivals} />
-      <main>
-        <BannerShow />
-        <div className="rows">
-          <Row title={"Now Trending"} data={data.nowTrending} />
-          <Row title={"Action & Adventure"} data={data.actionAdventure} />
-          <Row title={"Comedy"} data={data.comedy} />
-          <Row title={"Horror"} data={data.horror} />
-          <Row title={"Netflix Originals"} data={data.netflixOriginals} />
-        </div>
-      </main>
-      <Footer />
+      <Navbar />
+      <RouterProvider router={router} />
     </>
   );
 }
-
-export default App;

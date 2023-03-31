@@ -12,19 +12,17 @@ function Arrival({ show }) {
 
   return (
     <li>
-      <a href="/">
-        <img
-          className="notification-image"
-          src={imageBaseUrl + show.backdrop_path}
-          alt="missing"
-        />
-        <div>
-          <p>{show.name}</p>
-          <p className="date">
-            {releaseDate.month}/{releaseDate.day}
-          </p>
-        </div>
-      </a>
+      <img
+        className="notification-image"
+        src={imageBaseUrl + show.backdrop_path}
+        alt="missing"
+      />
+      <div>
+        <p>{show.name}</p>
+        <p className="date">
+          {releaseDate.month}/{releaseDate.day}
+        </p>
+      </div>
     </li>
   );
 }

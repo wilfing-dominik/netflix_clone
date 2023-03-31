@@ -1,13 +1,13 @@
 import React from "react";
-import ClipLoader from "react-spinners/ClipLoader";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 export default function Spinner({ loading }) {
   return (
     <>
-      <ClipLoader
+      <ScaleLoader
         color={"#ffffff"}
         loading={loading}
-        cssOverride={style}
+        // cssOverride={style}
         size={150}
         aria-label="Loading Spinner"
       />
@@ -15,15 +15,15 @@ export default function Spinner({ loading }) {
   );
 }
 
-const style = {
-  color: "#ffffff",
-  position: "absolute",
-  left: 0,
-  right: 0,
-  top: 0,
-  bottom: 0,
-  margin: "auto",
-  maxWidth: "100%",
-  maxHeight: "100%",
-  overflow: "auto",
-};
+// const style = {
+//   color: "#ffffff",
+//   position: "absolute",
+//   left: 0,
+//   right: 0,
+//   top: 0,
+//   bottom: 0,
+//   margin: "auto",
+//   maxWidth: "100%",
+//   maxHeight: "100%",
+//   overflow: "auto",
+// };

@@ -5,19 +5,19 @@ function MainMenu({ customClass }) {
         <a href="/">Home</a>
       </li>
       <li>
-        <a href="/">TV Shows</a>
+        <a href="/tv-shows">TV Shows</a>
       </li>
       <li>
-        <a href="/">Movies</a>
+        <a href="/movies">Movies</a>
       </li>
       <li>
-        <a href="/">New & Popular</a>
+        <a href="/trending">New & Popular</a>
       </li>
       <li>
-        <a href="/">My List</a>
+        <a href="/my-list">My List</a>
       </li>
       <li>
-        <a href="/">Browse by languages</a>
+        <a href="/browse-language">Browse by languages</a>
       </li>
     </ul>
   );
