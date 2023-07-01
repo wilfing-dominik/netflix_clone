@@ -1,7 +1,7 @@
 # Netflix-Clone
 
 ## About
-- The website is available at this link: https://wilfing-dominik.github.io/Netflix-Clone/
+- The website is available at this link: https://wilfing-dominik.github.io/netflix-clone/
 
 - This React JS project aims to copy the main page of Netflix's website
 - It uses TMDB's public API to fetch movies and TV shows by genres
