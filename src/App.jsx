@@ -1,15 +1,15 @@
-import React from "react";
+import React from "react"
 import {
   Route,
   createRoutesFromElements,
   createBrowserRouter,
   RouterProvider,
-} from "react-router-dom";
-import { requests } from "./utils/requests";
+} from "react-router-dom"
+import { requests } from "./utils/requests"
 
 // Components
-import Navbar from "./components/Navbar/Navbar";
-import Rows from "./components/Rows/Rows";
+import Navbar from "./components/Navbar/Navbar"
+import Rows from "./components/Rows/Rows"
 
 export default function App() {
   const router = createBrowserRouter(
@@ -43,12 +43,12 @@ export default function App() {
         />
       </>
     )
-  );
+  )
 
   return (
     <>
       <Navbar />
       <RouterProvider router={router} />
     </>
-  );
+  )
 }
