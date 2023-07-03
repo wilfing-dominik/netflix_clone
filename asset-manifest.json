@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Netflix-Clone/static/css/main.b3b0633b.css",
-    "main.js": "/Netflix-Clone/static/js/main.d1eab645.js",
-    "static/js/787.440c4889.chunk.js": "/Netflix-Clone/static/js/787.440c4889.chunk.js",
-    "static/media/banner_background.jpg": "/Netflix-Clone/static/media/banner_background.45f7fd14d50b2474aa63.jpg",
-    "static/media/banner_logo.png": "/Netflix-Clone/static/media/banner_logo.44d21ab27dd123d6a6b6.png",
-    "static/media/help_center.svg": "/Netflix-Clone/static/media/help_center.31b62132eddff8f7af97479bf7f1a61b.svg",
-    "static/media/account.svg": "/Netflix-Clone/static/media/account.c1b1327227f9eea4af995b22118bc9e7.svg",
-    "index.html": "/Netflix-Clone/index.html",
-    "static/media/manage_profiles.svg": "/Netflix-Clone/static/media/manage_profiles.c09d08ce03652288a3dbd98155c10b81.svg",
-    "main.b3b0633b.css.map": "/Netflix-Clone/static/css/main.b3b0633b.css.map",
-    "main.d1eab645.js.map": "/Netflix-Clone/static/js/main.d1eab645.js.map",
-    "787.440c4889.chunk.js.map": "/Netflix-Clone/static/js/787.440c4889.chunk.js.map"
+    "main.css": "https://wilfing-dominik.github.io/netflix-clone/static/css/main.d3a7cd67.css",
+    "main.js": "https://wilfing-dominik.github.io/netflix-clone/static/js/main.6fb6a47f.js",
+    "static/js/787.440c4889.chunk.js": "https://wilfing-dominik.github.io/netflix-clone/static/js/787.440c4889.chunk.js",
+    "static/media/banner_background.jpg": "https://wilfing-dominik.github.io/netflix-clone/static/media/banner_background.45f7fd14d50b2474aa63.jpg",
+    "static/media/banner_logo.png": "https://wilfing-dominik.github.io/netflix-clone/static/media/banner_logo.44d21ab27dd123d6a6b6.png",
+    "static/media/help_center.svg": "https://wilfing-dominik.github.io/netflix-clone/static/media/help_center.31b62132eddff8f7af97479bf7f1a61b.svg",
+    "static/media/account.svg": "https://wilfing-dominik.github.io/netflix-clone/static/media/account.c1b1327227f9eea4af995b22118bc9e7.svg",
+    "index.html": "https://wilfing-dominik.github.io/netflix-clone/index.html",
+    "static/media/manage_profiles.svg": "https://wilfing-dominik.github.io/netflix-clone/static/media/manage_profiles.c09d08ce03652288a3dbd98155c10b81.svg",
+    "main.d3a7cd67.css.map": "https://wilfing-dominik.github.io/netflix-clone/static/css/main.d3a7cd67.css.map",
+    "main.6fb6a47f.js.map": "https://wilfing-dominik.github.io/netflix-clone/static/js/main.6fb6a47f.js.map",
+    "787.440c4889.chunk.js.map": "https://wilfing-dominik.github.io/netflix-clone/static/js/787.440c4889.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b3b0633b.css",
-    "static/js/main.d1eab645.js"
+    "static/css/main.d3a7cd67.css",
+    "static/js/main.6fb6a47f.js"
   ]
 }
