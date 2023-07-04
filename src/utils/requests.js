@@ -1,17 +1,17 @@
-import axios from "axios";
+import axios from "axios"
 
 // For TMDB public API
-const API_KEY = "772e434a2b577aeab0e8724d77d306ce";
-const baseUrl = "https://api.themoviedb.org/3/";
-export const imageBaseUrl = "https://image.tmdb.org/t/p/original/";
+const API_KEY = "772e434a2b577aeab0e8724d77d306ce"
+const baseUrl = "https://api.themoviedb.org/3/"
+export const imageBaseUrl = "https://image.tmdb.org/t/p/original/"
 
 // Returns the current date in a y-m-d formatted string
-export let currentDate = new Date().toISOString().slice(0, 10);
+export let currentDate = new Date().toISOString().slice(0, 10)
 
 // Returns date of the week before the current date in a y-m-d formatted string
 let aWeekBeforeCurrentDate = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
   .toISOString()
-  .slice(0, 10);
+  .slice(0, 10)
 
 // API paths for movies and TV shows
 export const requests = {
@@ -61,13 +61,13 @@ export const requests = {
   comedy: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=35`,
   horror: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=27`,
   // END DEPRECATED APIs
-};
+}
 
 export const fetchData = async (...paths) => {
-  let response = await axios.all(paths.map((path) => axios.get(path)));
-  if (response.length === 1) return response[0];
-  return response;
-};
+  let response = await axios.all(paths.map((path) => axios.get(path)))
+  if (response.length === 1) return response[0]
+  return response
+}
 
 // DEPRECATED
 //Fetches all data, that is need for the page to work, sets up page for initial use
@@ -79,7 +79,7 @@ export const fetchAllData = async () => {
     axios.get(requests.horror),
     axios.get(requests.netflixOriginals),
     axios.get(requests.arrivals),
-  ]);
+  ])
 
   // Formats the fetch data to an object
   return {
@@ -89,8 +89,8 @@ export const fetchAllData = async () => {
     horror: response[3].data.results,
     netflixOriginals: response[4].data.results,
     arrivals: response[5].data.results,
-  };
-};
+  }
+}
 // END DEPRECATED
 
-export default requests;
+export default requests

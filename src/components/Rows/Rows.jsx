@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from "react"
 
 //Components
-import BannerShow from "../BannerShow/BannerShow";
-import Footer from "../Footer/Footer";
-import Row from "../Row/Row";
+import BannerShow from "../BannerShow/BannerShow"
+import Footer from "../Footer/Footer"
+import Row from "../Row/Row"
 
 export default function Rows({ requests }) {
   useEffect(() => {
-    let body = document.querySelector("body");
-    body.classList.add("loaded");
-  }, []);
+    let body = document.querySelector("body")
+    body.classList.add("loaded")
+  }, [])
 
   return (
     <>
@@ -23,5 +23,5 @@ export default function Rows({ requests }) {
         <Footer />
       </main>
     </>
-  );
+  )
 }
