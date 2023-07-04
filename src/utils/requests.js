@@ -15,37 +15,51 @@ let aWeekBeforeCurrentDate = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
 
 // API paths for movies and TV shows
 export const requests = {
-  // NEEDS TO BE EDITED
   home: {
-    actionAdventure:
-      baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=28`,
-    romantic: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=36`,
-    comedy: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=35`,
-    horror: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=27`,
+    paths: {
+      actionAdventure:
+        baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=28`,
+      romantic: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=36`,
+      comedy: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=35`,
+      horror: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=27`,
+    },
+
+    names: ["Action Adventure", "Romantic", "Comedy", "Horror"],
   },
-  // NEEDS TO BE EDITED
   shows: {
-    actionAdventure:
-      baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=28`,
-    romantic: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=36`,
-    comedy: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=35`,
-    horror: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=27`,
+    paths: {
+      actionAdventure:
+        baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=28`,
+      romantic: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=36`,
+      comedy: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=35`,
+      horror: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=27`,
+    },
+
+    names: ["Action Adventure", "Romantic", "Comedy", "Horror"],
   },
-  // NEEDS TO BE EDITED
+
   movies: {
-    actionAdventure:
-      baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=28`,
-    romantic: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=36`,
-    comedy: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=35`,
-    horror: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=27`,
+    paths: {
+      actionAdventure:
+        baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=28`,
+      romantic: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=36`,
+      comedy: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=35`,
+      horror: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=27`,
+    },
+
+    names: ["Action Adventure", "Romantic", "Comedy", "Horror"],
   },
-  // NEEDS TO BE EDITED
+
   trending: {
-    actionAdventure:
-      baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=28`,
-    romantic: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=36`,
-    comedy: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=35`,
-    horror: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=27`,
+    paths: {
+      actionAdventure:
+        baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=28`,
+      romantic: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=36`,
+      comedy: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=35`,
+      horror: baseUrl + `/discover/movie?api_key=${API_KEY}&with_genres=27`,
+    },
+
+    names: ["Action Adventure", "Romantic", "Comedy", "Horror"],
   },
 
   arrivals:

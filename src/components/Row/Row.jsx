@@ -1,33 +1,34 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { imageBaseUrl, fetchData } from "../../utils/requests";
-import ".//Row.css";
+import React, { useState, useEffect, useCallback } from "react"
+import { imageBaseUrl, fetchData } from "../../utils/requests"
+import ".//Row.css"
+import Modal from "react-modal"
 
 // Components
-import Spinner from "../Spinner/Spinner";
+import Spinner from "../Spinner/Spinner"
 
 function Row({ title, path }) {
-  const [loading, setLoading] = useState(true);
-  const [shows, setShows] = useState(null);
+  const [loading, setLoading] = useState(true)
+  const [shows, setShows] = useState(null)
 
   const getData = useCallback(() => {
     fetchData(path)
       .then((response) => {
-        setShows(response.data.results);
-        setLoading(false);
+        setShows(response.data.results)
+        setLoading(false)
       })
       .catch((err) => {
-        console.log(err);
-      });
-  }, [path]);
+        console.log(err)
+      })
+  }, [path])
 
   useEffect(() => {
-    getData();
-  }, [getData]);
+    getData()
+  }, [getData])
 
   return (
     <div className="row">
       <h1 className="title">{title}</h1>
-      <div className="row-posters">
+      <div onClick={console.log("clicked")} className="row-posters">
         {loading ? (
           <Spinner loading={loading} />
         ) : (
@@ -48,7 +49,7 @@ function Row({ title, path }) {
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default Row;
+export default Row
