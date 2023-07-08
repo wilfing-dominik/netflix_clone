@@ -1,7 +1,7 @@
 # Netflix-Clone
 
 ## About
-- The website is available at [this link:](https://netflix-frontend-clone-alpha.vercel.app/)
+- The website is available at [this link](https://netflix-frontend-clone-alpha.vercel.app/)
 
 - This React JS project aims to copy the main page of Netflix's website
 - It uses TMDB's public API to fetch movies and TV shows by genres
